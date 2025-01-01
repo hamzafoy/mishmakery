@@ -1,0 +1,45 @@
+<div class="grid-container">
+  <mat-grid-list class="w-100 h-100" [cols]="checkLayout()" rowHeight="46vh">
+    <mat-grid-tile class="border-bottom border-end">
+      <mat-card appearance="outlined" class="custom-card h-100 flex-row align-items-center">
+        <mat-card-header class="d-flex flex-column">
+          <div mat-card-avatar class="mishmakery-avatar"></div>
+          <mat-card-title>Mishkat Suleiman</mat-card-title>
+          <mat-card-subtitle>Owner and Operator of Mishmakery</mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider vertical="true" class="my-2 h-75"></mat-divider>
+        <mat-card-content>
+          <p [class.mx-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+            A search for the perfect chocolate cake is what sparked my initiation into the world of baking. 
+            All I wanted was a chocolate cake that tasted just like the ones from the famous Pakistani bakeries of my childhood. 
+            What I found instead was a mountain of sugar, chemicals, and unpronounceable ingredients in the form of big-box store bakery cakes. 
+            I realized that I would have to capture the taste of my past in my own kitchen.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile class="border-bottom">
+      <div class="reversespinningtiles h-100 w-100">
+        <div class="mishmakery-hilbah h-100 w-100"></div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="border-end" *ngIf="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+      <div class="speedingspinningtiles h-100 w-100">
+        <div class="mishmakery-cupcakes h-100 w-100"></div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card appearance="raised" class="custom-card h-100">
+        <mat-card-content>
+          <p [class.mt-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport" [class.mx-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+            Working on that first chocolate cake recipe opened my eyes to the science behind baking. 
+            Suddenly, it wasn't just about taste, it was about texture. And to get the right texture, I needed the right techniques. 
+            And for the right techniques to work, I needed the highest quality ingredients. 
+            Through that journey, not only did I re-discover many flavors and creations from my Pakistani-Arab heritage, 
+            I also learned that I love baking– even things that weren’t chocolate cake– and that I want to share my creations with others on their happiest occasions and on their most routine days. Everyday is a great day for cake!
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,11 @@
+<div class="grid-container px-4 py-4">
+  <ng-container class="border">
+    <div class="row w-100">
+      <div *ngFor="let img of galleryImgs" class="col-md-4 col-lg-3 col-xs-12">
+        <mat-card class="d-flex flex-column my-1">
+          <img mat-card-image [src]="img.url" [alt]="img.name" (click)="openGalleryDialog(img.url)" />
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+</div>

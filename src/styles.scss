@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@keyframes rotate-out {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  
+  @keyframes rotate-in {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+::view-transition-old(spinningtiles),
+::view-transition-new(spinningtiles) {
+  animation-duration: 200ms;
+  animation-name: -ua-view-transition-fade-in, rotate-in;
+}
+
+.spinningtiles {
+    animation: rotate-in 1.5s linear forwards 1;
+}
+
+.reversespinningtiles {
+    animation: rotate-out 2s linear forwards 1;
+}
+
+.speedingspinningtiles {
+    animation: rotate-in 1s linear forwards 1;
+}
+
+mat-card.custom-card {
+    border-radius: 0; /* Removes rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adjust the shadow */
+  }

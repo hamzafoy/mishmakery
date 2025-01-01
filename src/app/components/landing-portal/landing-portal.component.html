@@ -1,0 +1,25 @@
+<div class="landing-portal-container" [class.flex-column]="IsMobileViewport || IsTabletViewport">
+  <div class="mt-4 d-flex flex-column justify-content-center" [class.left-half]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+    <mat-card appearance="outlined" class="mx-4 landing-card">
+      <mat-card-header>
+        <mat-card-title>
+          Mishmakery LLC
+        </mat-card-title>
+        <mat-card-subtitle>
+          Scratch Bakery
+          <br/>
+          (502) 883-8130
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider class="mt-4 mb-2 mx-4"></mat-divider>
+      <mat-card-content>
+        <p>MISHMAKERY, LLC is a registered, licensed, and insured bakery in Louisville, KY, servicing all zip codes within city limits.
+          I bake cakes for an assortment of occasions such as weddings, & make an assortment of desserts including cookies, brownies, dessert breads as well as culturally unique desserts such as Pakistani burfi & Palestinian hilbeh.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="d-flex justify-content-center" [class.right-half]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+    <div class="landing-foto" [class.landing-foto-mobile]="IsMobileViewport || IsTabletViewport" [class.landing-foto-laptop]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport"></div>
+  </div>
+</div>

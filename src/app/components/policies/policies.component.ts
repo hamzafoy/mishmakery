@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LayoutService } from './services/layout.service';
-import { MishmakeryService } from './services/mishmakery.service';
+import { LayoutService } from '../../services/layout.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-policies',
+  templateUrl: './policies.component.html',
+  styleUrl: './policies.component.scss'
 })
-export class AppComponent {
+export class PoliciesComponent {
 
-  constructor(private layoutService: LayoutService, private mishmakeryService: MishmakeryService) {}
+  constructor(private layoutService: LayoutService) {}
 
   //Layout Service Methods
   get IsMobileViewport() {
@@ -32,5 +30,5 @@ export class AppComponent {
   get IsXLargeViewport() {
     return this.layoutService.isXLarge;
   }
-  
+
 }

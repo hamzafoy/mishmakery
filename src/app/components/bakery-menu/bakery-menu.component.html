@@ -1,0 +1,346 @@
+<div class="bakery-menu-container" *ngIf="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+    <mat-grid-list [cols]="checkLayout()" rowHeight="92vh">
+        <mat-grid-tile class="border-end d-flex" [class.flex-column]="IsMobileViewport || IsTabletViewport" [colspan]="checkLayout(true)">
+            <div class="menu-list d-flex flex-column ms-2 me-2 h-75">
+                <h4>Flavors</h4>
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Chocolate
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Marble
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Vanilla
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Strawberry
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Coffee
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Carrot
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Red Velvet
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Lemon
+                        </span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="menu-list d-flex flex-column ms-2 me-2 h-75">
+                <h4>Dessert Varieties</h4>
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Loaf Cakes
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Pound Cakes
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Dessert Breads
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Sponge Cake
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Cookies
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Decorated Cookies
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Pakistani Burfi
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Palestinian Hilba
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Brownies
+                        </span>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="menu-list d-flex flex-column ms-2 h-75">
+                <h4>Custom Order Minimums</h4>
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Sheet Cakes
+                        </span>
+                        <span matListItemLine class="font-monospace">
+                            $125
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Cupcakes
+                        </span>
+                        <span matListItemLine class="font-monospace">
+                            12 for $30
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>
+                            Tiered Cakes
+                        </span>
+                        <span matListItemLine class="font-monospace">
+                            $225
+                        </span>
+                    </mat-list-item>
+                </mat-list>
+                
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <mat-stepper linear class="h-75 w-75 border" orientation="vertical" animationDuration="500">
+                <mat-step [stepControl]="dessertTypeGroup">
+                    <form [formGroup]="dessertTypeGroup">
+                        <ng-template matStepLabel>Pick your Dessert Type</ng-template>
+                        <mat-form-field>
+                            <mat-label>Dessert Types</mat-label>
+                            <mat-select formControlName="dessertType" required>
+                                <mat-option *ngFor="let variant of dessertVariants" [value]="variant.name">
+                                    {{variant.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="dessertFlavorGroup">
+                    <form [formGroup]="dessertFlavorGroup">
+                        <ng-template matStepLabel>Pick your Flavors</ng-template>
+                        <mat-form-field>
+                            <mat-label>Dessert Types</mat-label>
+                            <mat-select formControlName="dessertFlavor" multiple required>
+                                <mat-option *ngFor="let flavor of dessertFlavors" [value]="flavor.name">
+                                    {{flavor.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel>Send Request Email!</ng-template>
+                  <p>Create button to send email to Mishkat Suleiman</p>
+                  <button mat-button matStepperPrevious>Back</button>
+                </mat-step>
+              </mat-stepper>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<!-- Mobile Layout Below -->
+
+<div class="bakery-menu-slim-container" *ngIf="IsMobileViewport || IsTabletViewport">
+    <div class="menu-listings d-flex flex-column">
+        <div class="menu-list d-flex flex-column ms-2 me-2">
+            <h4>Flavors</h4>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Chocolate
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Marble
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Vanilla
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Strawberry
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Coffee
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Carrot
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Red Velvet
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Lemon
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div class="menu-list d-flex flex-column ms-2 me-2">
+            <h4>Dessert Varieties</h4>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Loaf Cakes
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Pound Cakes
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Dessert Breads
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Sponge Cake
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Cookies
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Decorated Cookies
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Pakistani Burfi
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Palestinian Hilba
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Brownies
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div class="menu-list d-flex flex-column ms-2">
+            <h4>Custom Order Minimums</h4>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Sheet Cakes
+                    </span>
+                    <span matListItemLine class="font-monospace">
+                        $125
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Cupcakes
+                    </span>
+                    <span matListItemLine class="font-monospace">
+                        12 for $30
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>
+                        Tiered Cakes
+                    </span>
+                    <span matListItemLine class="font-monospace">
+                        $225
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <div class="menu-stepper d-flex flex-column align-items-center">
+        <mat-stepper linear class="h-75 w-75 border" orientation="vertical" animationDuration="500">
+            <mat-step [stepControl]="dessertTypeGroup">
+                <form [formGroup]="dessertTypeGroup">
+                    <ng-template matStepLabel>Pick your Dessert Type</ng-template>
+                    <mat-form-field>
+                        <mat-label>Dessert Types</mat-label>
+                        <mat-select formControlName="dessertType" required>
+                            <mat-option *ngFor="let variant of dessertVariants" [value]="variant.name">
+                                {{variant.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="dessertFlavorGroup">
+                <form [formGroup]="dessertFlavorGroup">
+                    <ng-template matStepLabel>Pick your Flavors</ng-template>
+                    <mat-form-field>
+                        <mat-label>Dessert Types</mat-label>
+                        <mat-select formControlName="dessertFlavor" multiple required>
+                            <mat-option *ngFor="let flavor of dessertFlavors" [value]="flavor.name">
+                                {{flavor.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Send Request Email!</ng-template>
+              <p>Create button to send email to Mishkat Suleiman</p>
+              <button mat-button matStepperPrevious>Back</button>
+            </mat-step>
+          </mat-stepper>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.gallery-viewer-modal-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-viewer-modal-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}

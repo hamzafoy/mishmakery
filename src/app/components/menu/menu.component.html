@@ -1,0 +1,28 @@
+<nav [class.nav-bar]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport" [class.nav-bar-mobile]="IsMobileViewport || IsTabletViewport">
+    <div class="nav-menu border-bottom" [class.nav-bar]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport" [class.nav-bar-mobile]="IsMobileViewport || IsTabletViewport">
+      <div class="nav-title">
+        <h1 class="mt-2 ms-3">Mishmakery</h1>
+      </div>
+      <div class="d-flex">
+        <nav mat-tab-nav-bar mat-stretch-tabs="false" mat-align-tabs="end" *ngIf="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+          <a
+            mat-tab-link
+            *ngFor="let link of links; let i = index"
+            [active]="selectedIndex === i"
+            (click)="selectedIndex = i"
+            [routerLink]="link.component"
+          >
+            {{ link.label }}
+          </a>
+        </nav>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center" *ngIf="IsMobileViewport || IsTabletViewport">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item *ngFor="let link of links; let i = index" [routerLink]="link.component">
+            <span>{{link.label}}</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+.grid-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+mat-grid-list {
+    flex: 1; /* Expand to fill the container */
+}
+
+.mishmakery-avatar {
+    background-image: url(../../../../public/mishmakery_logo.png);
+    background-size: cover;
+}
+
+.mishmakery-hilbah {
+    background-image: url(../../../../public/hilbah_mishmakery.jpg);
+    background-size: cover;
+}
+
+.mishmakery-cupcakes {
+    background-image: url(../../../../public/mishmakery_cupcakes.jpg);
+    background-size: cover;
+}
