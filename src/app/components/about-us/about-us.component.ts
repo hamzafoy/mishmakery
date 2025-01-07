@@ -34,5 +34,9 @@ export class AboutUsComponent {
   checkLayout(): number {
     return this.IsMobileViewport || this.IsTabletViewport ? 1 : 2
   }
+
+  triggerHeight(): string {
+    return this.IsMobileViewport || this.IsTabletViewport ? '52vh' : '46vh';
+  }
   
 }

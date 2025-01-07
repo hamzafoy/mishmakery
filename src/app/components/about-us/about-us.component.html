@@ -1,15 +1,15 @@
 <div class="grid-container">
-  <mat-grid-list class="w-100 h-100" [cols]="checkLayout()" rowHeight="46vh">
+  <mat-grid-list class="w-100 h-100" [cols]="checkLayout()" [rowHeight]="triggerHeight()">
     <mat-grid-tile class="border-bottom border-end">
       <mat-card appearance="outlined" class="custom-card h-100 flex-row align-items-center">
-        <mat-card-header class="d-flex flex-column">
+        <mat-card-header class="d-flex flex-column align-items-center">
           <div mat-card-avatar class="mishmakery-avatar"></div>
           <mat-card-title>Mishkat Suleiman</mat-card-title>
           <mat-card-subtitle>Owner and Operator of Mishmakery</mat-card-subtitle>
         </mat-card-header>
         <mat-divider vertical="true" class="my-2 h-75"></mat-divider>
         <mat-card-content>
-          <p [class.mx-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+          <p [class.my-4]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
             A search for the perfect chocolate cake is what sparked my initiation into the world of baking. 
             All I wanted was a chocolate cake that tasted just like the ones from the famous Pakistani bakeries of my childhood. 
             What I found instead was a mountain of sugar, chemicals, and unpronounceable ingredients in the form of big-box store bakery cakes. 
@@ -31,7 +31,7 @@
     <mat-grid-tile>
       <mat-card appearance="raised" class="custom-card h-100">
         <mat-card-content>
-          <p [class.mt-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport" [class.mx-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+          <p [class.mt-4]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport" [class.mx-5]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
             Working on that first chocolate cake recipe opened my eyes to the science behind baking. 
             Suddenly, it wasn't just about taste, it was about texture. And to get the right texture, I needed the right techniques. 
             And for the right techniques to work, I needed the highest quality ingredients. 
