@@ -36,7 +36,7 @@ export class AboutUsComponent {
   }
 
   triggerHeight(): string {
-    return this.IsMobileViewport || this.IsTabletViewport ? '52vh' : '46vh';
+    return this.IsMobileViewport || this.IsTabletViewport ? '65vh' : '46vh';
   }
   
 }

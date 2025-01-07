@@ -2,7 +2,7 @@
   <mat-grid-list class="w-100 h-100" [cols]="checkLayout()" [rowHeight]="triggerHeight()">
     <mat-grid-tile class="border-bottom border-end">
       <mat-card appearance="outlined" class="custom-card h-100 flex-row align-items-center">
-        <mat-card-header class="d-flex flex-column align-items-center">
+        <mat-card-header class="d-flex flex-column align-items-center" [class.mx-2]="IsMobileViewport || IsTabletViewport" [class.w-25]="IsMobileViewport || IsTabletViewport">
           <div mat-card-avatar class="mishmakery-avatar"></div>
           <mat-card-title>Mishkat Suleiman</mat-card-title>
           <mat-card-subtitle>Owner and Operator of Mishmakery</mat-card-subtitle>
