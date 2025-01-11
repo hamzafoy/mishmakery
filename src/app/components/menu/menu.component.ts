@@ -35,11 +35,11 @@ export class MenuComponent {
   links = [
     { label: 'Home', component: '' },
     { label: 'Menu', component: '/menu' },
-    { label: 'Gallery', component: '/gallery' },
-    { label: 'FAQ', component: '/faq' },
     { label: 'Order Here', component: '/order-here' },
+    { label: 'Gallery', component: '/gallery' },
     { label: 'Policies', component: '/policies' },
-    { label: 'About Me', component: '/about-us' }
+    { label: 'FAQ', component: '/faq' },
+    { label: 'About Us', component: '/about-us' }
   ];
 
 }
