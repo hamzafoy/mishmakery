@@ -1,4 +1,14 @@
 .order-requests-card {
-    margin: 5vh 15vw;
+    margin: 0 15vw;
     border-radius: 0;
+}
+
+.order-requests-container {
+    background-color: #e8dfd0;
+    color: #420c09;
+}
+
+::ng-deep .mat-mdc-card-outlined {
+    background-color: #e8dfd0 !important;
+    border-color: #420c09;
 }

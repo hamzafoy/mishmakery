@@ -1,7 +1,7 @@
 .grid-container {
     display: flex;
     flex-direction: column;
-
+    color: #420c09 !important;
 }
 
 mat-grid-list {
@@ -21,4 +21,9 @@ mat-grid-list {
 .mishmakery-cupcakes {
     background-image: url(../../../../public/mishmakery_cupcakes.jpg);
     background-size: cover;
+}
+
+::ng-deep .mat-mdc-card-outlined {
+    background-color: #e8dfd0 !important;
+    border-color: #420c09;
 }

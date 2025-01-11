@@ -1,6 +1,6 @@
 h1 {
     font-size: 2.125rem;
-    color: var(--gray-900);
+    color: #e8dfd0;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -13,6 +13,14 @@ h1 {
     color: var(--gray-700);
   }
 
+  ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    color: #e8dfd0 !important;
+  }
+
+  ::ng-deep .mat-icon {
+    color: #e8dfd0 !important;
+  }
+
   .nav-menu {
     display: flex;
     flex-direction: row;
@@ -21,6 +29,7 @@ h1 {
 
   .nav-bar {
     height: 50px;
+    background-color: #420c09;
   }
 
   .nav-bar-mobile {
@@ -28,5 +37,5 @@ h1 {
     top: 0;
     width: 100%;
     z-index: 100;
-    background-color: bisque;
+    background-color: #420c09;
   }
