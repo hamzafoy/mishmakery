@@ -1,5 +1,5 @@
 <div class="order-requests-container">
-    <mat-card appearance="outlined" [class.order-requests-card]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+    <mat-card appearance="outlined" [class.border-fix]="IsMobileViewport || IsTabletViewport" [class.order-requests-card]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
         <mat-card-header>
             <mat-card-title class="mx-2">
               Order Request Form

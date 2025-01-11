@@ -10,3 +10,8 @@
 .question-answer-span {
     width: fit-content;
 }
+
+::ng-deep .mat-mdc-card-outlined {
+    background-color: #e8dfd0 !important;
+    border-color: #420c09 !important;
+}

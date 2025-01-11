@@ -21,6 +21,14 @@ h1 {
     color: #e8dfd0 !important;
   }
 
+  ::ng-deep .mat-mdc-menu-content {
+    background-color: #e8dfd0 !important;
+  }
+
+  ::ng-deep .mat-mdc-menu-item {
+    color: #420c09 !important;
+  }
+
   .nav-menu {
     display: flex;
     flex-direction: row;
