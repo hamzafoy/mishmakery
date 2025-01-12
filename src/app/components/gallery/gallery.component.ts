@@ -12,13 +12,15 @@ export class GalleryComponent implements OnInit {
   public trueColCount: number = 2;
   galleryImgs = [
     {name: 'hilbah', url: '/hilbah_mishmakery.jpg'},
-    {name: 'cupcakes', url: '/law_cake_mishmakery.jpg'},
-    {name: 'tulip_cake', url: '/mishmakery_cupcakes.jpg'},
-    {name: 'law_cake', url: '/tulip_cake_mishmakery.png'},
-    {name: 'hilbah', url: '/hilbah_mishmakery.jpg'},
-    {name: 'cupcakes', url: '/law_cake_mishmakery.jpg'},
-    {name: 'tulip_cake', url: '/mishmakery_cupcakes.jpg'},
-    {name: 'law_cake', url: '/tulip_cake_mishmakery.png'}
+    {name: 'law_cake', url: '/mishmakery_law_cake.jpg'},
+    {name: 'cupcakes1', url: '/mishmakery_cupcakes.jpg'},
+    {name: 'tulip_cake', url: '/tulip_cake_mishmakery.png'},
+    {name: 'cupcakes2', url: '/mishmakery_cupcakes_2.png'},
+    {name: 'regal_cake', url: '/mishmakery_regal_cake.png'},
+    {name: 'cupcakes3', url: '/mishmakery_cupcakes_3.png'},
+    {name: 'mariam_cake', url: '/mishmakery_mariam_cake.png'},
+    {name: 'cupcakes4', url: '/mishmakery_cupcakes_4.png'},
+    {name: 'cupcakes5', url: '/mishmakery_cupcakes_5.png'}
   ]
 
   constructor(
