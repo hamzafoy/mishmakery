@@ -58,10 +58,10 @@ export class GalleryComponent implements OnInit {
       data: {
         imgUrl: url
       },
-      width: '70vw',
-      maxWidth: '70vw',
-      height: '70vh',
-      maxHeight: '70vh',
+      width: 'auto',
+      maxWidth: 'auto',
+      height: 'auto',
+      maxHeight: 'auto',
       autoFocus: false
     })
   }
