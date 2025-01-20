@@ -20,7 +20,10 @@ export class GalleryComponent implements OnInit {
     {name: 'cupcakes3', url: '/mishmakery_cupcakes_3.png'},
     {name: 'mariam_cake', url: '/mishmakery_mariam_cake.png'},
     {name: 'cupcakes4', url: '/mishmakery_cupcakes_4.png'},
-    {name: 'cupcakes5', url: '/mishmakery_cupcakes_5.png'}
+    {name: 'cupcakes5', url: '/mishmakery_cupcakes_5.png'},
+    {name: 'regal_cake2', url: '/mishmakery_regal_cake_2.png'},
+    {name: 'regal_cake3', url: '/mishmakery_regal_cake_3.png'},
+    {name: 'artsy_cake', url: '/mishmakery_artsy_cake.png'}
   ]
 
   constructor(
