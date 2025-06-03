@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LayoutService } from '../../services/layout.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { LayoutService } from '../../services/layout.service';
   templateUrl: './landing-portal.component.html',
   styleUrl: './landing-portal.component.scss'
 })
-export class LandingPortalComponent {
+export class LandingPortalComponent implements OnInit, OnDestroy {
 
   constructor(private layoutService: LayoutService) {}
 
@@ -29,6 +29,33 @@ export class LandingPortalComponent {
 
   get IsXLargeViewport() {
     return this.layoutService.isXLarge;
+  }
+
+  public homeImages: string[] = [
+    '../../../../tulip_cake_mishmakery.png',
+    '../../../../mishmakery_cupcakes_3.png',
+    '../../../../mishmakery_artsy_cake.png'
+  ];
+  
+  currentIndex: number = 0;
+  intervalId: any;
+
+  ngOnInit(): void {
+    this.startImageAutoplay();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  startImageAutoplay() {
+    this.intervalId = setInterval(() => {
+      this.nextImage();
+    }, 6000);
+  }
+
+  nextImage() {
+    this.currentIndex = (this.currentIndex + 1) % this.homeImages.length;
   }
 
 }

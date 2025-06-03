@@ -37,7 +37,7 @@ export class MenuComponent {
     { label: 'Menu', component: '/menu' },
     { label: 'Order Here', component: '/order-here' },
     { label: 'Gallery', component: '/gallery' },
-    { label: 'Policies', component: '/policies' },
+    { label: 'Terms & Conditions', component: '/policies' },
     { label: 'FAQ', component: '/faq' },
     { label: 'About Us', component: '/about-us' }
   ];

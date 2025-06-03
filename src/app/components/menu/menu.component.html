@@ -16,8 +16,9 @@
             {{ link.label }}
           </a>
         </nav>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center" *ngIf="IsMobileViewport || IsTabletViewport">
-          <mat-icon>more_vert</mat-icon>
+        <button mat-button [matMenuTriggerFor]="menu" class="align-self-center" *ngIf="IsMobileViewport || IsTabletViewport">
+          <!-- <mat-icon>more_vert</mat-icon> -->
+           <span class="click-here-text-button">Click Here</span>
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item *ngFor="let link of links; let i = index" [routerLink]="link.component">

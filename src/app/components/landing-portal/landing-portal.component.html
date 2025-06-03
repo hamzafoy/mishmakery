@@ -3,12 +3,16 @@
     <mat-card appearance="outlined" class="mx-4 landing-card">
       <mat-card-header>
         <mat-card-title>
-          Mishmakery LLC
+          MISHMAKERY
         </mat-card-title>
         <mat-card-subtitle>
           Scratch Bakery
           <br/>
           (502) 883-8130
+          <br/>
+          <a class="landing-portal-links" href="mailto:mishmakery@gmail.com">mishmakery&#64;gmail.com</a>
+          <br/>
+          <a class="landing-portal-links" href="https://www.instagram.com/mishmakery/">&#64;Mishmakery</a>
         </mat-card-subtitle>
       </mat-card-header>
       <mat-divider class="mt-4 mb-2 mx-4"></mat-divider>
@@ -19,7 +23,15 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="d-flex justify-content-center" [class.right-half]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
-    <div class="landing-foto" [class.landing-foto-mobile]="IsMobileViewport || IsTabletViewport" [class.landing-foto-laptop]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport"></div>
+  <div class="d-flex justify-content-center carousel-container" [class.landing-container-mobile]="IsMobileViewport || IsTabletViewport" [class.right-half]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport">
+    <img
+      *ngFor="let image of homeImages; let i = index"
+      [src]="image"
+      loading="lazy"
+      class="carousel-image"
+      [class.active]="i === currentIndex"
+      [class.landing-foto-mobile]="IsMobileViewport || IsTabletViewport" [class.landing-foto-laptop]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport"
+    />
+    <!-- <div class="landing-foto" [class.landing-foto-mobile]="IsMobileViewport || IsTabletViewport" [class.landing-foto-laptop]="IsLaptopViewport || IsLargeViewport || IsXLargeViewport"></div> -->
   </div>
 </div>
