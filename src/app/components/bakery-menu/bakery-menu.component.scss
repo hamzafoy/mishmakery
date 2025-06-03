@@ -25,3 +25,16 @@
     background-color: #e8dfd0;
     color: #420c09;
 }
+
+.menu-dessert-p {
+    margin: 0;
+}
+
+.desktop-layout-top {
+    top: -200px;
+    position: relative;
+}
+
+::ng-deep .mdc-list-item {
+    padding-left: 0 !important;
+}
