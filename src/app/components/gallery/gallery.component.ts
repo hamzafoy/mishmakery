@@ -23,7 +23,30 @@ export class GalleryComponent implements OnInit {
     {name: 'cupcakes5', url: '/mishmakery_cupcakes_5.png'},
     {name: 'regal_cake2', url: '/mishmakery_regal_cake_2.png'},
     {name: 'regal_cake3', url: '/mishmakery_regal_cake_3.png'},
-    {name: 'artsy_cake', url: '/mishmakery_artsy_cake.png'}
+    {name: 'artsy_cake', url: '/mishmakery_artsy_cake.png'},
+    {name: 'artsy_cake', url: '/mish_1.png'},
+    {name: 'artsy_cake', url: '/mish_2.png'},
+    {name: 'artsy_cake', url: '/mish_3.png'},
+    {name: 'artsy_cake', url: '/mish_4.png'},
+    {name: 'artsy_cake', url: '/mish_5.png'},
+    {name: 'artsy_cake', url: '/mish_6.png'},
+    {name: 'artsy_cake', url: '/mish_8.png'},
+    {name: 'artsy_cake', url: '/mish_9.png'},
+    {name: 'artsy_cake', url: '/mish_10.png'},
+    {name: 'artsy_cake', url: '/mish_11.png'},
+    {name: 'artsy_cake', url: '/mish_12.png'},
+    {name: 'artsy_cake', url: '/mish_13.png'},
+    {name: 'artsy_cake', url: '/mish_14.png'},
+    {name: 'artsy_cake', url: '/mish_15.png'},
+    {name: 'artsy_cake', url: '/mish_16.png'},
+    {name: 'artsy_cake', url: '/mish_17.png'},
+    {name: 'artsy_cake', url: '/mish_19.png'},
+    {name: 'artsy_cake', url: '/mish_20.png'},
+    {name: 'artsy_cake', url: '/mish_21.png'},
+    {name: 'artsy_cake', url: '/mish_22.png'},
+    {name: 'artsy_cake', url: '/mish_23.png'},
+    {name: 'artsy_cake', url: '/mish_24.png'},
+    {name: 'artsy_cake', url: '/mish_25.png'}
   ]
 
   constructor(
