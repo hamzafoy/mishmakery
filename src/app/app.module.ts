@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { register } from 'swiper/element/bundle';
 //Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -51,6 +52,8 @@ import { LandingPortalComponent } from './components/landing-portal/landing-port
 import { MenuComponent } from './components/menu/menu.component';
 //Services
 import { MishmakeryService } from './services/mishmakery.service';
+
+register();
 
 @NgModule({
   declarations: [
@@ -108,6 +111,7 @@ import { MishmakeryService } from './services/mishmakery.service';
     MishmakeryService,
     provideHttpClient(withInterceptorsFromDi())
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<div class="grid-container px-4 py-4">
+<!-- <div class="grid-container px-4 py-4">
   <ng-container class="border">
     <div class="row w-100">
       <div *ngFor="let img of galleryImgs" class="col-md-4 col-lg-3 col-xs-12">
@@ -7,5 +7,65 @@
         </mat-card>
       </div>
     </div>
+  </ng-container>
+</div> -->
+
+<div class="grid-container px-4 py-4">
+  <ng-container *ngFor="let cat of categories">
+    <ng-container *ngIf="getImagesByCategory(cat).length > 1">
+      <h2 class="capitalize">{{ cat }}</h2>
+      <swiper-container
+        scrollbar-hide="true"
+        [lazy]="true"
+        class="category-carousel"
+        [breakpoints]="{
+        '0': { slidesPerView: 1 },
+        '768': { slidesPerView: 2 },
+        '1024': { slidesPerView: 3 }
+      }"
+        space-between="30"
+      >
+        <ng-container *ngFor="let img of getImagesByCategory(cat)">
+          <swiper-slide>
+            <img
+              [src]="img.url"
+              class="swiper-lazy"
+              [alt]="cat"
+              (click)="openGalleryDialog(img.url)"
+            />
+            <div class="swiper-lazy-preloader"></div>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+    </ng-container>
+
+    <ng-container *ngIf="getImagesByCategory(cat).length == 1">
+      <h2 class="capitalize">{{ cat }}</h2>
+      <swiper-container
+        centered-slides="true"
+        scrollbar-hide="true"
+        [lazy]="true"
+        class="category-carousel"
+        [breakpoints]="{
+        '0': { slidesPerView: 1 },
+        '768': { slidesPerView: 2 },
+        '1024': { slidesPerView: 3 }
+      }"
+        space-between="30"
+      >
+        <ng-container *ngFor="let img of getImagesByCategory(cat)">
+          <swiper-slide>
+            <img
+              [src]="img.url"
+              class="swiper-lazy"
+              [alt]="cat"
+              (click)="openGalleryDialog(img.url)"
+            />
+            <div class="swiper-lazy-preloader"></div>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+    </ng-container>
+    
   </ng-container>
 </div>
