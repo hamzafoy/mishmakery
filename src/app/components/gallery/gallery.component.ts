@@ -47,6 +47,8 @@ export class GalleryComponent implements OnInit {
     {name: 'misc_1', category: 'miscellaneous', url: '/mish_37.png'},
     {name: 'misc_4', category: 'miscellaneous', url: '/mish_38.png'},
     {name: 'misc_2', category: 'miscellaneous', url: '/mish_39.png'},
+    {name: 'baby_2', category: 'baby', url: '/mish_40.jpg'},
+    {name: 'baby_3', category: 'baby', url: '/mish_41.jpg'},
   ]
 
   constructor(
