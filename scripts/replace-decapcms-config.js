@@ -1,5 +1,5 @@
-const { readFileSync, writeFileSync, mkdirSync, existsSync } = require('fs');
-const { join, dirname } = require('path');
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
 
 const scriptDir = dirname(require.main.filename);
 const __dirname = scriptDir;
