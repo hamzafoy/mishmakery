@@ -1,48 +1,26 @@
-const fs = require('fs');
-const path = require('path');
+import { readFileSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-// Template in repo
-const templatePath = path.join(__dirname, '..', 'public', 'admin', 'config.yml.template');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-// Determine output path:
-// - When running on Vercel, prefer process.env.VERCEL_OUTPUT_DIR if set
-// - Allow override with CONFIG_OUT_DIR (useful in Vercel project settings)
-// - Fallback to the local public/admin path for dev
-const vercelFallback = '/vercel/path0/dist/mishmakery'; // user's Vercel output location
-const outDirCandidate = process.env.CONFIG_OUT_DIR || process.env.VERCEL_OUTPUT_DIR || vercelFallback;
-const outPath = path.join(outDirCandidate, 'admin', 'config.yml');
+// Adjust these paths to match mishmakery’s structure
+const templatePath = join(__dirname, 'public/admin/config.template.yml');
+const outputPath = join('dist', 'mishmakery', 'admin', 'config.yml'); // or wherever Vercel serves it from
 
-if (!fs.existsSync(templatePath)) {
-  console.error('Template not found:', templatePath);
-  process.exit(1);
+let contents = readFileSync(templatePath, 'utf8');
+
+const replacements = {
+  '${CLOUDINARY_API_KEY}': process.env.CLOUDINARY_API_KEY || '',
+  '${CLOUDINARY_API_SECRET}': process.env.CLOUDINARY_API_SECRET || '',
+  '${GITHUB_CLIENT_ID}': process.env.GITHUB_CLIENT_ID || '',
+  '${GITHUB_CLIENT_SECRET}': process.env.GITHUB_CLIENT_SECRET || ''
+  // add any other placeholders you use
+};
+
+for (const [placeholder, value] of Object.entries(replacements)) {
+  contents = contents.replace(new RegExp(placeholder, 'g'), value);
 }
 
-let content = fs.readFileSync(templatePath, 'utf8');
-
-// Support ${VAR} and ${VAR:-default} syntax
-content = content.replace(/\$\{([A-Z0-9_]+)(?:\:-([^}]*))?\}/g, (match, name, defaultValue) => {
-  const val = process.env[name];
-  if (val === undefined || val === '') {
-    if (defaultValue !== undefined) return defaultValue;
-    const strict = process.env.STRICT_CONFIG === '1' || process.env.STRICT_CONFIG === 'true';
-    if (strict) {
-      console.error(`Missing required environment variable: ${name}`);
-      process.exit(2);
-    }
-    console.warn(`Warning: environment variable ${name} is not set. Replacing with empty string.`);
-    return '';
-  }
-  return val;
-});
-
-// Ensure destination directory exists
-const outDir = path.dirname(outPath);
-try {
-  fs.mkdirSync(outDir, { recursive: true });
-} catch (err) {
-  console.error('Failed to create directory', outDir, err);
-  process.exit(3);
-}
-
-fs.writeFileSync(outPath, content, 'utf8');
-console.log('Wrote', outPath);
+writeFileSync(outputPath, contents, 'utf8');
