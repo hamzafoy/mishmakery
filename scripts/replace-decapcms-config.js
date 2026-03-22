@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Adjust these paths to match mishmakery’s structure
-const templatePath = join(__dirname, 'public/admin/config.template.yml');
+const templatePath = join(__dirname, '../public/admin/config.template.yml');
 const outputPath = join('dist', 'mishmakery', 'admin', 'config.yml'); // or wherever Vercel serves it from
 
 let contents = readFileSync(templatePath, 'utf8');
