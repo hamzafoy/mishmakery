@@ -6,16 +6,5 @@
       "destination": "/admin/index.html",
       "permanent": true
     }
-  ],
-  "headers": [
-    {
-      "source": "/admin/config.yml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/yaml"
-        }
-      ]
-    }
   ]
 }

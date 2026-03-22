@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node scripts/replace-decapcms-config.js",
+    "build": "node scripts/replace-decapcms-config.js && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

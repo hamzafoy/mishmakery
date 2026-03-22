@@ -8,21 +8,20 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const templatePath = join(__dirname, '../public/admin/config.template.yml');
 
 // Detect output path:
-// - On Vercel: use VERCEL_OUTPUT_DIR or fallback to /vercel/path0/dist/mishmakery
-// - Locally: use dist/mishmakery (Angular copies public/ into this directory)
+// - Always write to public/admin/config.yml (source folder)
+// - Angular's build step copies public/ → dist/mishmakery/
+// - This ensures config.yml is included in the build output
 const isVercel = !!process.env.VERCEL;
-let outputDir;
 
+// For consistency, log environment
 if (isVercel) {
-  outputDir = process.env.VERCEL_OUTPUT_DIR || '';
-  console.log('[Decap CMS Config] Running on Vercel, output dir:', outputDir);
+  console.log('[Decap CMS Config] Running on Vercel');
 } else {
-  // Local build: Angular copies public/ into dist/mishmakery
-  outputDir = process.env.CONFIG_OUTPUT_DIR || 'dist/mishmakery';
-  console.log('[Decap CMS Config] Running locally, output dir:', outputDir);
+  console.log('[Decap CMS Config] Running locally');
 }
 
-const outputPath = join(outputDir, 'admin', 'config.yml');
+const outputDir = 'public/admin';
+const outputPath = join(outputDir, 'config.yml');
 
 // Verify template exists
 if (!existsSync(templatePath)) {
