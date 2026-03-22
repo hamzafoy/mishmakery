@@ -29,7 +29,7 @@
         <ng-container *ngFor="let img of getImagesByCategory(cat)">
           <swiper-slide>
             <img
-              [src]="getOptimizedImageUrl(img.url)"
+              [src]="img.url"
               class="swiper-lazy"
               [alt]="cat"
               (click)="openGalleryDialog(img.url)"
@@ -57,7 +57,7 @@
         <ng-container *ngFor="let img of getImagesByCategory(cat)">
           <swiper-slide>
             <img
-              [src]="getOptimizedImageUrl(img.url)"
+              [src]="img.url"
               class="swiper-lazy"
               [alt]="cat"
               (click)="openGalleryDialog(img.url)"

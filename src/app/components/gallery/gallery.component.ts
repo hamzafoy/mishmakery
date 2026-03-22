@@ -56,47 +56,6 @@ export class GalleryComponent implements OnInit {
     private layoutService: LayoutService
   ) {}
 
-  
-  // --- Vercel Image Optimization configuration ---
-  // Replace <YOUR_DEPLOYMENT> with your Vercel deployment hostname (no protocol)
-  // Example: 'my-site.vercel.app' => full endpoint becomes
-  // 'https://my-site.vercel.app/_vercel/image'
-  private vercelImageEndpoint: string = 'https://mishmakery-1qwpjsbiq-hamzafoys-projects.vercel.app/_vercel/image';
-
-  // Base origin to convert root-relative paths like '/mish_5.png' into absolute URLs.
-  // Use window.location.origin at runtime in the browser. Guard for SSR safety.
-  private get publicBase(): string {
-    return (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : '';
-  }
-
-  /**
-   * Build an optimized image URL using Vercel Image Optimization endpoint.
-   * - imgPath can be absolute (http/https) or root-relative like '/mish_5.png'.
-   * - width is optional; if omitted, a width is chosen based on current viewport.
-   * - quality defaults to 75.
-   */
-  getOptimizedImageUrl(imgPath: string, width?: number, quality: number = 75): string {
-    if (!imgPath) return imgPath;
-
-    const src = imgPath.startsWith('http') ? imgPath : `${this.publicBase}${imgPath}`;
-    const w = width || this.getTargetWidth();
-
-    // Compose the Vercel optimizer URL. Vercel expects a `url` param with the source.
-    // Example: https://<deployment>/_vercel/image?url=<encoded-src>&w=800&q=75
-    const params = new URLSearchParams({ url: src, w: String(w), q: String(quality) });
-    return `${this.vercelImageEndpoint}?${params.toString()}`;
-  }
-
-  // Choose a target width based on viewport size. Tune values as needed.
-  private getTargetWidth(): number {
-    if (this.IsMobileViewport) return 480;
-    if (this.IsTabletViewport) return 768;
-    if (this.IsLaptopViewport) return 1024;
-    if (this.IsLargeViewport) return 1440;
-    if (this.IsXLargeViewport) return 1920;
-    return 800;
-  }
-
   categories = ['wedding', 'graduation', 'baby', 'birthday', 'holiday', 'cupcakes', 'miscellaneous'];
   getImagesByCategory(category: string) {
     return this.galleryImgs.filter(img => img.category === category);
