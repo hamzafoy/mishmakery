@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/admin/:path*",
-      "destination": "/public/admin/:path*"
-    }
-  ]
+  "version": 2
 }
