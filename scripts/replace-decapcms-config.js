@@ -1,12 +1,24 @@
-import { readFileSync, writeFileSync } from 'fs';
+const fs = require('fs');
+const path = require('path');
 
-const filePath = 'public/admin/config.yml';
-let contents = readFileSync(filePath, 'utf8');
+const templatePath = path.join(__dirname, '..', 'public', 'admin', 'config.yml.template');
+const outPath = path.join(__dirname, '..', 'public', 'admin', 'config.yml');
 
-contents = contents
-  .replace('${CLOUDINARY_API_KEY}', process.env.CLOUDINARY_API_KEY || '')
-  .replace('${CLOUDINARY_API_SECRET}', process.env.CLOUDINARY_API_SECRET || '')
-  .replace('${GITHUB_CLIENT_ID}', process.env.GITHUB_CLIENT_ID || '')
-  .replace('${GITHUB_CLIENT_SECRET}', process.env.GITHUB_CLIENT_SECRET || '');
+if (!fs.existsSync(templatePath)) {
+  console.error('Template not found:', templatePath);
+  process.exit(1);
+}
 
-writeFileSync(filePath, contents, 'utf8');
+let content = fs.readFileSync(templatePath, 'utf8');
+
+content = content.replace(/\$\{([A-Z0-9_]+)\}/g, (match, name) => {
+  const val = process.env[name];
+  if (val === undefined) {
+    console.warn(`Warning: environment variable ${name} is not set. Replacing with empty string.`);
+    return '';
+  }
+  return val;
+});
+
+fs.writeFileSync(outPath, content, 'utf8');
+console.log('Wrote', outPath);
