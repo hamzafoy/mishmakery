@@ -41,4 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-config.yml
+# Generated Decap CMS config (with environment variables injected)
+public/admin/config.yml
