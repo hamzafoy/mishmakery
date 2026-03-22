@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/admin/(.*)",
-      "dest": "/public/admin/$1"
+      "source": "/admin/:path*",
+      "destination": "/public/admin/:path*"
     }
   ]
 }
