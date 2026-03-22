@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const scriptDir = dirname(require.main.filename);
-const __dirname = scriptDir;
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Template in repo (source)
 const templatePath = join(__dirname, '../public/admin/config.template.yml');
