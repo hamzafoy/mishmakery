@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 
 // Adjust these paths to match mishmakery’s structure
 const templatePath = join(__dirname, '../public/admin/config.template.yml');
-const outputPath = join('dist', 'mishmakery', 'admin', 'config.yml'); // or wherever Vercel serves it from
+const outputPath = join('dist', 'mishmakery', 'browser', 'admin', 'config.yml'); // or wherever Vercel serves it from
 
 let contents = readFileSync(templatePath, 'utf8');
 
