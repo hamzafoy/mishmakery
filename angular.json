@@ -37,8 +37,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets",
-              "admin"
+              "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/rose-red.css",
