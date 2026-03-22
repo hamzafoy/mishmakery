@@ -9,7 +9,7 @@ const templatePath = join(__dirname, '../public/admin/config.template.yml');
 
 // Detect output path:
 // - On Vercel: use VERCEL_OUTPUT_DIR or fallback to /vercel/path0/dist/mishmakery
-// - Locally: use dist/mishmakery/browser (Angular default) or ./public for testing
+// - Locally: use dist/mishmakery (Angular copies public/ into this directory)
 const isVercel = !!process.env.VERCEL;
 let outputDir;
 
@@ -17,8 +17,8 @@ if (isVercel) {
   outputDir = process.env.VERCEL_OUTPUT_DIR || '/vercel/path0/dist/mishmakery';
   console.log('[Decap CMS Config] Running on Vercel, output dir:', outputDir);
 } else {
-  // Local build: try common Angular output paths
-  outputDir = process.env.CONFIG_OUTPUT_DIR || 'dist/mishmakery/browser';
+  // Local build: Angular copies public/ into dist/mishmakery
+  outputDir = process.env.CONFIG_OUTPUT_DIR || 'dist/mishmakery';
   console.log('[Decap CMS Config] Running locally, output dir:', outputDir);
 }
 
