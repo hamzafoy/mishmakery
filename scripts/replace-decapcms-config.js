@@ -14,7 +14,7 @@ const isVercel = !!process.env.VERCEL;
 let outputDir;
 
 if (isVercel) {
-  outputDir = process.env.VERCEL_OUTPUT_DIR || '/vercel/path0/dist/mishmakery';
+  outputDir = process.env.VERCEL_OUTPUT_DIR || '';
   console.log('[Decap CMS Config] Running on Vercel, output dir:', outputDir);
 } else {
   // Local build: Angular copies public/ into dist/mishmakery
