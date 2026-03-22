@@ -5,5 +5,12 @@
       "source": "/admin/:path*",
       "destination": "/admin/:path*"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html",
+      "permanent": true
+    }
   ]
 }
