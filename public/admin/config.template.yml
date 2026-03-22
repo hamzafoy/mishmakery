@@ -2,15 +2,15 @@ backend:
   name: github
   repo: hamzafoy/mishmakery
   auth_scope: public_repo
-  app_id: "${GITHUB_CLIENT_ID}"
-  app_secret: "${GITHUB_CLIENT_SECRET}"
+  app_id: "GITHUB_CLIENT_ID"
+  app_secret: "GITHUB_CLIENT_SECRET"
 
 media_library:
   name: cloudinary
   config:
     cloud_name: "dynxatbex"
-    api_key: "${CLOUDINARY_API_KEY}"
-    api_secret: "${CLOUDINARY_API_SECRET}"
+    api_key: "CLOUDINARY_API_KEY"
+    api_secret: "CLOUDINARY_API_SECRET"
     folder: "mishmakery"
 
 media_folder: ""      # With cloudinary, leave blank
