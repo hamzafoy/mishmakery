@@ -36,8 +36,8 @@ let contents = readFileSync(templatePath, 'utf8');
 
 // Strict mode: fail if required vars are missing
 const strictMode = process.env.STRICT_CONFIG === '1' || process.env.STRICT_CONFIG === 'true' || !isVercel;
-const requiredVars = ['GITHUB_CLIENT_ID', 'CLOUDINARY_API_KEY'];
-const allVars = ['GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET'];
+const requiredVars = ['GITHUB_CLIENT_ID', 'CLOUDINARY_API_KEY', 'AUTH_ENDPOINT', 'AUTH_TOKEN_ENDPOINT'];
+const allVars = ['GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET', 'AUTH_ENDPOINT', 'AUTH_TOKEN_ENDPOINT'];
 
 console.log('[Decap CMS Config] Strict mode:', strictMode);
 
