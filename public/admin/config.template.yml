@@ -1,8 +1,12 @@
 backend:
-  name: github
-  repo: hamzafoy
+  name: git-gateway
+  repo: hamzafoy/mishmakery
   branch: main
-  base_url: https://mishmakery-oauth.vercel.app
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/c87c6081-6868-433d-af0d-033ead269601/pkce
+  auth_token_endpoint: /sites/c87c6081-6868-433d-af0d-033ead269601/token
+  gateway_url: https://gateway.decapbridge.com
 
 media_library:
   name: cloudinary
