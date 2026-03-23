@@ -1,6 +1,6 @@
 backend:
-  name: [ github | gitlab ]
-  repo: hamzafoy/mishmakery
+  name: github
+  repo: hamzafoy
   auth_scope: public_repo
   branch: main
   base_url: https://mishmakery-oauth.vercel.app
