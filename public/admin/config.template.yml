@@ -15,6 +15,7 @@ media_library:
     api_key: "CLOUDINARY_API_KEY"
     api_secret: "CLOUDINARY_API_SECRET"
     folder: "mishmakery"
+    upload_preset: decap_unsigned
 
 media_folder: ""      # With cloudinary, leave blank
 public_folder: ""     # With cloudinary, leave blank
