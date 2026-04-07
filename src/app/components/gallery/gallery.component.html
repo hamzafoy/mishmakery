@@ -1,60 +1,94 @@
 <div class="grid-container px-4 py-4">
   <ng-container *ngFor="let cat of categories">
-    <ng-container *ngIf="getImagesByCategory(cat).length > 1">
+    <ng-container *ngIf="getImagesByCategory(cat).length > 0 || isLoadingCategory(cat)">
       <h2 class="capitalize">{{ cat }}</h2>
-      <swiper-container
-        scrollbar-hide="true"
-        [navigation]="true"
-        [lazy]="true"
-        class="category-carousel"
-        [breakpoints]="{
-        '0': { slidesPerView: 1 },
-        '768': { slidesPerView: 2 },
-        '1024': { slidesPerView: 3 }
-      }"
-        space-between="30"
-      >
-        <ng-container *ngFor="let img of getImagesByCategory(cat)">
-          <swiper-slide>
-            <img
-              [src]="img.url"
-              class="swiper-lazy"
-              [alt]="cat"
-              (click)="openGalleryDialog(img.url)"
-            />
-            <div class="swiper-lazy-preloader"></div>
-          </swiper-slide>
-        </ng-container>
-      </swiper-container>
-    </ng-container>
 
-    <ng-container *ngIf="getImagesByCategory(cat).length == 1">
-      <h2 class="capitalize">{{ cat }}</h2>
-      <swiper-container
-        centered-slides="true"
-        scrollbar-hide="true"
-        [lazy]="true"
-        class="category-carousel"
-        [breakpoints]="{
-        '0': { slidesPerView: 1 },
-        '768': { slidesPerView: 2 },
-        '1024': { slidesPerView: 3 }
-      }"
-        space-between="30"
-      >
-        <ng-container *ngFor="let img of getImagesByCategory(cat)">
-          <swiper-slide>
-            <img
-              [src]="img.url"
-              class="swiper-lazy"
-              [alt]="cat"
-              (click)="openGalleryDialog(img.url)"
-            />
-            <div class="swiper-lazy-preloader"></div>
-          </swiper-slide>
-        </ng-container>
-      </swiper-container>
+      <!-- Loading Skeleton State -->
+      <ng-container *ngIf="isLoadingCategory(cat) && getImagesByCategory(cat).length === 0">
+        <swiper-container
+          scrollbar-hide="true"
+          [navigation]="true"
+          class="category-carousel"
+          [breakpoints]="{
+          '0': { slidesPerView: 1 },
+          '768': { slidesPerView: 2 },
+          '1024': { slidesPerView: 3 }
+        }"
+          space-between="30"
+        >
+          <ng-container *ngFor="let i of [0, 1, 2]">
+            <swiper-slide>
+              <div class="skeleton-loader"></div>
+            </swiper-slide>
+          </ng-container>
+        </swiper-container>
+      </ng-container>
+
+      <!-- Loaded Images State - Multiple Images -->
+      <ng-container *ngIf="getImagesByCategory(cat).length > 1">
+        <swiper-container
+          scrollbar-hide="true"
+          [navigation]="true"
+          [lazy]="true"
+          class="category-carousel"
+          [breakpoints]="{
+          '0': { slidesPerView: 1 },
+          '768': { slidesPerView: 2 },
+          '1024': { slidesPerView: 3 }
+        }"
+          space-between="30"
+        >
+          <ng-container *ngFor="let img of getImagesByCategory(cat)">
+            <swiper-slide>
+              <div class="image-container">
+                <img
+                  [src]="img.url"
+                  class="swiper-lazy gallery-image"
+                  [alt]="cat"
+                  (click)="openGalleryDialog(img.url)"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+            </swiper-slide>
+          </ng-container>
+        </swiper-container>
+      </ng-container>
+
+      <!-- Loaded Images State - Single Image -->
+      <ng-container *ngIf="getImagesByCategory(cat).length === 1">
+        <swiper-container
+          centered-slides="true"
+          scrollbar-hide="true"
+          [lazy]="true"
+          class="category-carousel"
+          [breakpoints]="{
+          '0': { slidesPerView: 1 },
+          '768': { slidesPerView: 2 },
+          '1024': { slidesPerView: 3 }
+        }"
+          space-between="30"
+        >
+          <ng-container *ngFor="let img of getImagesByCategory(cat)">
+            <swiper-slide>
+              <div class="image-container">
+                <img
+                  [src]="img.url"
+                  class="swiper-lazy gallery-image"
+                  [alt]="cat"
+                  (click)="openGalleryDialog(img.url)"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+            </swiper-slide>
+          </ng-container>
+        </swiper-container>
+      </ng-container>
     </ng-container>
-    
   </ng-container>
 </div>
