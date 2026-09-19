@@ -21,54 +21,51 @@ media_folder: ""      # With cloudinary, leave blank
 public_folder: ""     # With cloudinary, leave blank
 
 collections:
-  - name: "gallery"
-    label: "Gallery"
-    folder: "content/gallery"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Description", name: "description", widget: "text" }
   - name: "bakery_menu"
     label: "Bakery Menu"
-    files: "public/content/bakery_menu.json"
-    fields:
-      - label: "Custom Cakes"
-        name: "customCakes"
-        widget: "object"
+    files:
+      - file: "public/content/bakery_menu.json"
+        label: "Bakery Menu"
+        name: "bakery_menu"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Items"
-            name: "items"
-            widget: "list"
+          - label: "Custom Cakes"
+            name: "customCakes"
+            widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Note", name: "note", widget: "string", required: false }
-
-      - label: "Other Desserts"
-        name: "otherDesserts"
-        widget: "object"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Details"
-                name: "details"
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Items"
+                name: "items"
                 widget: "list"
-                field: { label: "Detail", name: "detail", widget: "string" }
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Note", name: "note", widget: "string", required: false }
 
-      - label: "Custom Cake Flavors"
-        name: "flavors"
-        widget: "object"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            field: { label: "Flavor", name: "flavor", widget: "string" }
-          - { label: "Additional Message", name: "additionalMessage", widget: "string" }
+          - label: "Other Desserts"
+            name: "otherDesserts"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Details"
+                    name: "details"
+                    widget: "list"
+                    field:
+                      { label: "Detail", name: "detail", widget: "string" }
+
+          - label: "Custom Cake Flavors"
+            name: "flavors"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field:
+                  { label: "Flavor", name: "flavor", widget: "string" }
+              - { label: "Additional Message", name: "additionalMessage", widget: "string" }
