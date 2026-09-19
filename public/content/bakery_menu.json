@@ -1,6 +1,6 @@
 {
   "customCakes": {
-    "title": "Custom Cakes",
+    "title": "Custom Cakes Options",
     "description": "Below are starting prices for undecorated cakes that are standard 3-layers (~5-6 inches high), with the exception of sheet cakes which are 2-layers (~3-4 inches high). Final pricing is determined by the flavors, fillings, number of servings needed, and complexity of decorative elements. Please note that the smallest single tier cake is a 5 inch round or square cake.",
     "items": [
       {
@@ -10,7 +10,7 @@
       },
       {
         "title": "5 inch (14-20 servings)",
-        "price": "Starting at $60.00 round/$80 square."
+        "price": "Starting at $60.00 round"
       },
       {
         "title": "6 inch (16-22 servings)",
@@ -18,7 +18,7 @@
       },
       {
         "title": "7 inch (22-28 servings)",
-        "price": "Starting at $105.00 round/$115 square."
+        "price": "Starting at $105.00 round"
       },
       {
         "title": "8 inch (28-34 servings)",
@@ -26,7 +26,7 @@
       },
       {
         "title": "9 inch (34-40 servings)",
-        "price": "Starting at $150.00 round/$160 square."
+        "price": "Starting at $150.00 round"
       },
       {
         "title": "10 inch (40-50 servings)",
@@ -34,7 +34,7 @@
       },
       {
         "title": "11 inch (50-60 servings)",
-        "price": "Starting at $200.00 round/$240 square."
+        "price": "Starting at $200.00 round"
       },
       {
         "title": "12 inch (60-72 servings)",
@@ -42,23 +42,23 @@
       },
       {
         "title": "13 inch (72-82 servings)",
-        "price": "Starting at $320.00 round/$340 square."
+        "price": "Starting at $320.00 round"
       },
       {
         "title": "14 inch (82-100 servings)",
         "price": "Starting at $340.00 round/$400 square."
       },
       {
-        "title": "9x13 1/4 sheet (15-20 servings)",
-        "price": "Starting at $80.00"
+        "title": "9x13 1/4 sheet (25-30 servings)",
+        "price": "Starting at $120"
       },
       {
-        "title": "13x18 1/2 sheet (30-40 servings)",
-        "price": "Starting at $160.00"
+        "title": "13x18 1/2 sheet (50-60 servings)",
+        "price": "Starting at $240"
       },
       {
-        "title": "18x26 full sheet (90-100 servings)",
-        "price": "Starting at $400.00"
+        "title": "18x26 full sheet (100-120 servings)",
+        "price": "Starting at $480.00"
       }
     ]
   },
@@ -73,15 +73,35 @@
         ]
       },
       {
-        "title": "Loaf Cakes & Dessert Breads",
+        "title": "Decorated Sugar Cookies",
         "details": [
-          "9x5 inch (6-8 servings) - $30.00"
+          "Minimum order of 24",
+          "Starting at $60 per dozen for basic designs"
+        ]
+      },
+      {
+        "title": "French Macarons",
+        "details": [
+          "Minimum Order of 12. Starting at $40.00",
+          "Price increases with certain flavors, fillings, & decorations"
         ]
       },
       {
         "title": "Bundt Cakes",
         "details": [
           "10 inch round (24-30 servings) - $50.00"
+        ]
+      },
+      {
+        "title": "Brownies",
+        "details": [
+          "8 inch square (16 servings) - $25.00"
+        ]
+      },
+      {
+        "title": "Loaf Cakes & Dessert Breads",
+        "details": [
+          "9x5 inch (6-8 servings) - $30.00"
         ]
       },
       {
@@ -94,26 +114,6 @@
         "title": "Palestinian Hilba Fenugreek Cake",
         "details": [
           "11x17 inch tray (32-40 servings) - $50.00"
-        ]
-      },
-      {
-        "title": "Brownies",
-        "details": [
-          "8 inch square (16 servings) - $25.00"
-        ]
-      },
-      {
-        "title": "French Macarons",
-        "details": [
-          "Minimum Order of 12. Starting at $40.00",
-          "Price increases with certain flavors, fillings, & decorations"
-        ]
-      },
-      {
-        "title": "Sponge Cake",
-        "details": [
-          "European style, lightly decorated, limited sizes available",
-          "Starting at $5 per serving"
         ]
       }
     ]
@@ -129,12 +129,10 @@
       "Carrot",
       "Red Velvet",
       "Lemon",
-      "White Chocolate",
       "Caramel",
       "Blueberry",
       "Pistachio",
-      "Pineapple",
-      "Spice Cake"
+      "Almond"
     ],
     "additionalMessage": "Please ask for additional flavors!"
   }
