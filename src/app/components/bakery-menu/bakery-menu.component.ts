@@ -1,6 +1,35 @@
 import { Component, inject } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { LayoutService } from '../../services/layout.service';
+import { HttpClient } from '@angular/common/http';
+
+interface CustomCakeItem {
+  title: string;
+  price: string;
+  note?: string;
+}
+
+interface DessertItem {
+  title: string;
+  details: string[];
+}
+
+interface BakeryMenuContent {
+  customCakes: {
+    title: string;
+    description: string;
+    items: CustomCakeItem[];
+  };
+  otherDesserts: {
+    title: string;
+    items: DessertItem[];
+  };
+  flavors: {
+    title: string;
+    items: string[];
+    additionalMessage: string;
+  };
+}
 
 @Component({
   selector: 'app-bakery-menu',
@@ -8,8 +37,29 @@ import { LayoutService } from '../../services/layout.service';
   styleUrl: './bakery-menu.component.scss'
 })
 export class BakeryMenuComponent {
+  menu?: BakeryMenuContent;
+  menuLoading = true;
+  menuError = false;
 
-  constructor(private layoutService: LayoutService) {}
+  constructor(
+    private layoutService: LayoutService,
+    private http: HttpClient
+  ) {}
+
+  ngOnInit(): void {
+    this.http.get<BakeryMenuContent>('/content/bakery_menu.json')
+      .subscribe({
+        next: (menu) => {
+          this.menu = menu;
+          this.menuLoading = false;
+        },
+        error: (error) => {
+          console.error('Unable to load bakery menu:', error);
+          this.menuLoading = false;
+          this.menuError = true;
+        }
+      });
+  }
 
   //Layout Service Methods
   get IsMobileViewport() {

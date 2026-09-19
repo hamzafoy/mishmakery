@@ -2,276 +2,54 @@
     <mat-grid-list cols="2" rowHeight="200vh">
         <mat-grid-tile class="border-end d-flex" [class.flex-column]="IsMobileViewport || IsTabletViewport" [colspan]="checkLayout(true)">
             <div class="menu-list menu-list-wide d-flex flex-column h-75">
-                <h4>Custom Cakes</h4>
+                <h4>{{ menu?.customCakes?.title }}</h4>
+
                 <div class="ms-1 me-4">
-                    Below are <strong>starting prices</strong> for <strong>undecorated</strong> cakes that are standard 3-layers (~5-6&Prime; high) with the exception
-                    of sheet cakes which are 2-layers (~3-4&Prime; high). Final pricing is determined
-                    by the flavors, fillings, number of servings needed, &amp; complexity of decorative
-                    elements. Please note that the smallest single tier cake is a 5&Prime; round or square
-                    cake.
+                {{ menu?.customCakes?.description }}
                 </div>
+
                 <mat-list>
-                    <mat-list-item>
+                    <mat-list-item *ngFor="let item of menu?.customCakes?.items">
                         <span matListItemTitle>
-                            4&Prime; (8-12 servings)
+                        {{ item.title }}
                         </span>
-                        <p class="menu-dessert-p" matListItemLine>
-                            Starting at $40.00 round/$50 square.
-                        </p>
+
                         <p matListItemLine>
-                            Cannot be ordered as a single tier cake.
+                        {{ item.price }}
                         </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            5&Prime; (14-20 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $60.00 round/$80 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            6&Prime; (16-22 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $80.00 round/$90 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            7&Prime; (22-28 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $105.00 round/$115 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            8&Prime; (28-34 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $130.00 round/$140 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            9&Prime; (34-40 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $150.00 round/$160 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            10&Prime; (40-50 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $180.00 round/$200 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            11&Prime; (50-60 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $200.00 round/$240 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            12&Prime; (60-72 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $240.00 round/$290 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            13&Prime; (72-82 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $320.00 round/$340 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            14&Prime; (82-100 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $340.00 round/$400 square.
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            9x13 ¼ sheet (15-20 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $80.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            13x18 ½ sheet (30-40 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $160.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            18x26 full sheet (90-100 servings)
-                        </span>
-                        <p matListItemLine>
-                            Starting at $400.00
+
+                        <p matListItemLine *ngIf="item.note">
+                        {{ item.note }}
                         </p>
                     </mat-list-item>
                 </mat-list>
             </div>
             <div class="menu-list menu-list-wide d-flex flex-column h-75">
-                <h4>Other Desserts</h4>
+                <h4>{{ menu?.otherDesserts?.title }}</h4>
+
                 <mat-list>
-                    <mat-list-item>
+                    <mat-list-item *ngFor="let item of menu?.otherDesserts?.items">
                         <span matListItemTitle>
-                            Cupcakes
+                        {{ item.title }}
                         </span>
-                        <p class="menu-dessert-p" matListItemLine>
-                            Minimum Order of 12
-                        </p>
-                        <p matListItemLine>
-                            Starting at $2.50 per standard cupcake, $5 per jumbo cupcake
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Loaf Cakes &amp; Dessert Breads
-                        </span>
-                        <p matListItemLine>
-                            9x5&Prime; (6-8 servings) - $30.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Bundt Cakes
-                        </span>
-                        <p matListItemLine>
-                            10&Prime; round (24-30 servings) - $50.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Pakistani Burfi
-                        </span>
-                        <p matListItemLine>
-                            8&Prime; square (16 servings) - $30.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Palestinian Hilba Fenugreek Cake
-                        </span>
-                        <p matListItemLine>
-                            11x17&Prime; tray (32-40 servings) - $50.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Brownies
-                        </span>
-                        <p matListItemLine>
-                            8&Prime; square (16 servings) - $25.00
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            French Macarons
-                        </span>
-                        <p class="menu-dessert-p" matListItemLine>
-                            Minimum Order of 12. Starting at $40.00
-                        </p>
-                        <p matListItemLine>
-                            Price increases with certain flavors, fillings, &amp; decorations
-                        </p>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>
-                            Sponge Cake
-                        </span>
-                        <p class="menu-dessert-p" matListItemLine>
-                            European style, lightly decorated, limited sizes available
-                        </p>
-                        <p matListItemLine>
-                            Starting at $3 per serving
+
+                        <p matListItemLine *ngFor="let detail of item.details">
+                        {{ detail }}
                         </p>
                     </mat-list-item>
                 </mat-list>
-                <h4>Custom Cake Flavors</h4>
-                <div class="d-flex flex-column">
-                    <div class="row mb-3">
-                        <span class="col">
-                            Chocolate
-                        </span>
-                        <span class="col">
-                            Cookies &amp; Cream
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Vanilla
-                        </span>
-                        <span class="col">
-                            Strawberry
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Coffee
-                        </span>
-                        <span class="col">
-                            Carrot
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Red Velvet
-                        </span>
-                        <span class="col">
-                            Lemon
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Caramel
-                        </span>
-                        <span class="col">
-                            Blueberry
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Pistachio
-                        </span>
-                        <span class="col">
-                            Pineapple
-                        </span>
-                    </div>
-                    <div class="row mb-3">
-                        <span class="col">
-                            Spice Cake
-                        </span>
-                        <span class="col">
-                            <strong>Please ask for additional flavors!</strong>
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="col">
-                            
-                        </span>
-                        <span class="col">
-                            
-                        </span>
-                    </div>
-            </div>
+
+                <h4>{{ menu?.flavors?.title }}</h4>
+
+                <div class="flavor-grid">
+                    <span *ngFor="let flavor of menu?.flavors?.items">
+                        {{ flavor }}
+                    </span>
+                </div>
+
+                <strong class="mt-3">
+                {{ menu?.flavors?.additionalMessage }}
+                </strong>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
@@ -280,286 +58,55 @@
 <!-- Mobile Layout Below -->
 
 <div class="bakery-menu-slim-container" *ngIf="IsMobileViewport || IsTabletViewport">
-    <div class="menu-listings d-flex flex-column">
+    <div class="menu-listings d-flex flex-column ps-2">
         <div class="menu-list d-flex flex-column ms-2 me-2">
-            <h4>Custom Cakes</h4>
-            <div class="ms-4 me-4">
-                Below are <strong>starting prices</strong> for <strong>undecorated</strong> cakes that are standard 3-layers (~5-6&Prime; high) with the exception
-                    of sheet cakes which are 2-layers (~3-4&Prime; high). Final pricing is determined
-                    by the flavors, fillings, number of servings needed, &amp; complexity of decorative
-                    elements. Please note that the smallest single tier cake is a 5&Prime; round or square
-                    cake.
-            </div>
-            <mat-list>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        4&Prime; (8-12 servings)
-                    </span>
-                    <p class="menu-dessert-p" matListItemLine>
-                        Starting at $40.00 round/$50 square.
-                    </p>
-                    <p matListItemLine>
-                        Cannot be ordered as a single tier cake.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        5&Prime; (14-20 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $60.00 round/$80 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        6&Prime; (16-22 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $80.00 round/$90 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        7&Prime; (22-28 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $105.00 round/$115 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        8&Prime; (28-34 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $130.00 round/$140 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        9&Prime; (34-40 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $150.00 round/$160 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        10&Prime; (40-50 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $180.00 round/$200 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        11&Prime; (50-60 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $200.00 round/$240 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        12&Prime; (60-72 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $240.00 round/$290 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        13&Prime; (72-82 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $320.00 round/$340 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        14&Prime; (82-100 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $340.00 round/$400 square.
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        9x13 ¼ sheet (15-20 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $80.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        13x18 ½ sheet (30-40 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $160.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        18x26 full sheet (90-100 servings)
-                    </span>
-                    <p matListItemLine>
-                        Starting at $400.00
-                    </p>
-                </mat-list-item>
-            </mat-list>
-        </div>
-        <div class="menu-list d-flex flex-column ms-2 me-2">
-            <h4>Other Desserts</h4>
-            <mat-list>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Cupcakes
-                    </span>
-                    <p class="menu-dessert-p" matListItemLine>
-                        Minimum Order of 12
-                    </p>
-                    <p matListItemLine>
-                        Starting at $2.50 per standard cupcake, $5 per jumbo cupcake
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Loaf Cakes &amp; Dessert Breads
-                    </span>
-                    <p matListItemLine>
-                        9x5&Prime; (6-8 servings) - $30.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Bundt Cakes
-                    </span>
-                    <p matListItemLine>
-                        10&Prime; round (24-30 servings) - $50.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Pakistani Burfi
-                    </span>
-                    <p matListItemLine>
-                        8&Prime; square (16 servings) - $30.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Palestinian Hilba Fenugreek Cake
-                    </span>
-                    <p matListItemLine>
-                        11x17&Prime; tray (32-40 servings) - $50.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Brownies
-                    </span>
-                    <p matListItemLine>
-                        8&Prime; square (16 servings) - $25.00
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        French Macarons
-                    </span>
-                    <p class="menu-dessert-p" matListItemLine>
-                        Minimum Order of 12. Starting at $40.00
-                    </p>
-                    <p matListItemLine>
-                        Price increases with certain flavors, fillings, &amp; decorations
-                    </p>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Sponge Cake
-                    </span>
-                    <p class="menu-dessert-p" matListItemLine>
-                        European style, lightly decorated, limited sizes available
-                    </p>
-                    <p matListItemLine>
-                        Starting at $5 per serving
-                    </p>
-                </mat-list-item>
-            </mat-list>
+            <h4>{{ menu?.customCakes?.title }}</h4>
+
+                <div class="ms-1 me-4">
+                {{ menu?.customCakes?.description }}
+                </div>
+
+                <mat-list>
+                    <mat-list-item *ngFor="let item of menu?.customCakes?.items">
+                        <span matListItemTitle>
+                        {{ item.title }}
+                        </span>
+
+                        <p matListItemLine>
+                        {{ item.price }}
+                        </p>
+
+                        <p matListItemLine *ngIf="item.note">
+                        {{ item.note }}
+                        </p>
+                    </mat-list-item>
+                </mat-list>
         </div>
         <div class="menu-list d-flex flex-column ms-2 me-2 mb-3">
-            <h4>Custom Cake Flavors</h4>
-            <mat-list>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Chocolate
+            <h4>{{ menu?.otherDesserts?.title }}</h4>
+                <mat-list>
+                    <mat-list-item *ngFor="let item of menu?.otherDesserts?.items">
+                        <span matListItemTitle>
+                        {{ item.title }}
+                        </span>
+
+                        <p matListItemLine *ngFor="let detail of item.details">
+                        {{ detail }}
+                        </p>
+                    </mat-list-item>
+                </mat-list>
+
+                <h4>{{ menu?.flavors?.title }}</h4>
+
+                <div class="flavor-grid">
+                    <span *ngFor="let flavor of menu?.flavors?.items">
+                        {{ flavor }}
                     </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Vanilla
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Strawberry
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Coffee
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Carrot
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Red Velvet
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Lemon
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        White Chocolate
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Blueberry
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Pistachio
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Pineapple
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Spice Cake
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Cookies &amp; Cream
-                    </span>
-                </mat-list-item>
-                <mat-list-item>
-                    <span matListItemTitle>
-                        Caramel
-                    </span>
-                </mat-list-item>
-            </mat-list>
+                </div>
+
+                <strong class="mt-3">
+                {{ menu?.flavors?.additionalMessage }}
+                </strong>
         </div>
     </div>
 </div>

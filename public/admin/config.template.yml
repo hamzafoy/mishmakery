@@ -29,3 +29,46 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
+  - name: "bakery_menu"
+    label: "Bakery Menu"
+    file: "public/content/bakery_menu.json"
+    fields:
+      - label: "Custom Cakes"
+        name: "customCakes"
+        widget: "object"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Note", name: "note", widget: "string", required: false }
+
+      - label: "Other Desserts"
+        name: "otherDesserts"
+        widget: "object"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Details"
+                name: "details"
+                widget: "list"
+                field: { label: "Detail", name: "detail", widget: "string" }
+
+      - label: "Custom Cake Flavors"
+        name: "flavors"
+        widget: "object"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            field: { label: "Flavor", name: "flavor", widget: "string" }
+          - { label: "Additional Message", name: "additionalMessage", widget: "string" }
