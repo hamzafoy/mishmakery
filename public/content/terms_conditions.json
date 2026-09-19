@@ -1,0 +1,22 @@
+{
+    "orders": {
+        "title": "Orders",
+        "items": []
+    },
+    "safety": {
+        "title": "Safety",
+        "items": []
+    },
+    "dietary_restrictions": {
+        "title": "Dietary Restrictions",
+        "items": []
+    },
+    "pickup_delivery": {
+        "title": "Pickup & Delivery",
+        "items": []
+    },
+    "refunds_cancellations": {
+        "title": "Refunds & Cancellations",
+        "items": []
+    }
+}

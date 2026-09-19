@@ -21,6 +21,43 @@ media_folder: ""      # With cloudinary, leave blank
 public_folder: ""     # With cloudinary, leave blank
 
 collections:
+  - name: "terms_conditions"
+    label: "Terms & Conditions"
+    files:
+      - file: "public/content/terms_conditions.json"
+        label: "Terms & Conditions"
+        name: "terms_conditions"
+        fields:
+          - label: "Orders"
+            name: "orders"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+          - label: "Safety"
+            name: "safety"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+          - label: "Dietary Restrictions"
+            name: "dietary_restrictions"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+          - label: "Pickup & Delivery"
+            name: "pickup_delivery"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+          - label: "Refunds & Cancellations"
+            name: "refunds_cancellations"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
   - name: "bakery_menu"
     label: "Bakery Menu"
     files:
