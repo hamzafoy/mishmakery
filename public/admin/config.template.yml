@@ -36,8 +36,9 @@ collections:
               - label: "Items"
                 name: "items"
                 widget: "list"
-                fields: { label: "Terms", name: "terms", widget: "string" }
-                
+                fields: 
+                  - { label: "Terms", name: "terms", widget: "string" }
+
           - label: "Safety"
             name: "safety"
             widget: "object"
@@ -46,7 +47,8 @@ collections:
               - label: "Items"
                 name: "items"
                 widget: "list"
-                fields: { label: "Terms", name: "terms", widget: "string" }
+                fields: 
+                  - { label: "Terms", name: "terms", widget: "string" }
 
           - label: "Dietary Restrictions"
             name: "dietary_restrictions"
@@ -56,7 +58,8 @@ collections:
               - label: "Items"
                 name: "items"
                 widget: "list"
-                fields: { label: "Terms", name: "terms", widget: "string" }
+                fields: 
+                  - { label: "Terms", name: "terms", widget: "string" }
 
           - label: "Pickup & Delivery"
             name: "pickup_delivery"
@@ -66,7 +69,8 @@ collections:
               - label: "Items"
                 name: "items"
                 widget: "list"
-                fields: { label: "Terms", name: "terms", widget: "string" }
+                fields: 
+                  - { label: "Terms", name: "terms", widget: "string" }
 
           - label: "Refunds & Cancellations"
             name: "refunds_cancellations"
@@ -76,7 +80,9 @@ collections:
               - label: "Items"
                 name: "items"
                 widget: "list"
-                fields: { label: "Terms", name: "terms", widget: "string" }
+                fields: 
+                  - { label: "Terms", name: "terms", widget: "string" }
+
   - name: "bakery_menu"
     label: "Bakery Menu"
     files:
