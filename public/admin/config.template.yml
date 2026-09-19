@@ -31,8 +31,7 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
   - name: "bakery_menu"
     label: "Bakery Menu"
-    file: "public/content/bakery_menu.json"
-    folder: "content/bakery_menu"
+    files: "public/content/bakery_menu.json"
     fields:
       - label: "Custom Cakes"
         name: "customCakes"
