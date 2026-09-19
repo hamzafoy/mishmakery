@@ -73,6 +73,20 @@
         ]
       },
       {
+        "title": "Decorated Sugar Cookies",
+        "details": [
+          "Minimum order of 24",
+          "Starting at $60 per dozen for basic designs"
+        ]
+      },
+      {
+        "title": "French Macarons",
+        "details": [
+          "Minimum Order of 12. Starting at $40.00",
+          "Price increases with certain flavors, fillings, & decorations"
+        ]
+      },
+      {
         "title": "Loaf Cakes & Dessert Breads",
         "details": [
           "9x5 inch (6-8 servings) - $30.00"
@@ -85,6 +99,12 @@
         ]
       },
       {
+        "title": "Brownies",
+        "details": [
+          "8 inch square (16 servings) - $25.00"
+        ]
+      },
+      {
         "title": "Pakistani Burfi",
         "details": [
           "8 inch square (16 servings) - $30.00"
@@ -94,26 +114,6 @@
         "title": "Palestinian Hilba Fenugreek Cake",
         "details": [
           "11x17 inch tray (32-40 servings) - $50.00"
-        ]
-      },
-      {
-        "title": "Brownies",
-        "details": [
-          "8 inch square (16 servings) - $25.00"
-        ]
-      },
-      {
-        "title": "French Macarons",
-        "details": [
-          "Minimum Order of 12. Starting at $40.00",
-          "Price increases with certain flavors, fillings, & decorations"
-        ]
-      },
-      {
-        "title": "Decorated Sugar Cookies",
-        "details": [
-          "Minimum order of 24",
-          "Starting at $60 per dozen for basic designs"
         ]
       }
     ]
