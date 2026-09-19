@@ -33,31 +33,50 @@ collections:
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields: { label: "Terms", name: "terms", widget: "string" }
+                
           - label: "Safety"
             name: "safety"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields: { label: "Terms", name: "terms", widget: "string" }
+
           - label: "Dietary Restrictions"
             name: "dietary_restrictions"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields: { label: "Terms", name: "terms", widget: "string" }
+
           - label: "Pickup & Delivery"
             name: "pickup_delivery"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields: { label: "Terms", name: "terms", widget: "string" }
+
           - label: "Refunds & Cancellations"
             name: "refunds_cancellations"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Items", name: "items", widget: "list", fields: { label: "Terms", name: "terms", widget: "string" } }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields: { label: "Terms", name: "terms", widget: "string" }
   - name: "bakery_menu"
     label: "Bakery Menu"
     files:
