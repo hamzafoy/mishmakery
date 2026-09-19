@@ -108,6 +108,13 @@
           "Minimum Order of 12. Starting at $40.00",
           "Price increases with certain flavors, fillings, & decorations"
         ]
+      },
+      {
+        "title": "Decorated Sugar Cookies",
+        "details": [
+          "Minimum order of 24",
+          "Starting at $60 per dozen for basic designs"
+        ]
       }
     ]
   },
