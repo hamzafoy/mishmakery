@@ -1,0 +1,41 @@
+{
+    "title": "Frequently Asked Questions",
+    "questions": [
+        {
+            "question": "How can I contact you to order from you?",
+            "answer": "Please fill out the order form on the Order Here page at this link: MISHMAKERY Order Form. A representative from MISHMAKERY will contact you for further details."
+        },
+        {
+            "question": "What is your address?",
+            "answer": "MISHMAKERY is a home-based operation that is fully licensed, registered, and insured. For privacy, the home address will not be provided until 24 hours before the pickup for an order."
+        },
+        {
+            "question": "Do you use only halal ingredients?",
+            "answer": "Yes! MISHMAKERY is a Muslim-owned bakery. We use only certified halal items where items contain animal products (i.e. gelatin) and we use flavoring emulsions, not alcohol-based extracts."
+        },
+        {
+            "question": "What flavors are available?",
+            "answer": "Please see the Menu page here: MISHMAKERY Menu"
+        },
+        {
+            "question": "How much does a custom cake cost?",
+            "answer": "A MISHMAKERY custom cake can range from $4-$25 per serving. Price is determined by size and complexity of design and due to the fact that all items (cake, frosting, filling, fondant) are made from scratch and fresh per order. Minimum order is $100 for custom cakes."
+        },
+        {
+            "question": "What payment methods are accepted?",
+            "answer": "We accept Zelle, CashApp, and Venmo. We can also do credit card transactions over the phone for an additional processing fee. We do not accept cash on delivery or checks."
+        },
+        {
+            "question": "Can you ship cakes & baked goods?",
+            "answer": "We do not offer shipping at this time."
+        },
+        {
+            "question": "Do you offer tastings or samples?",
+            "answer": "We offer cupcake sampler boxes starting at $60. This includes 12 cupcakes in up to 6 different flavors of cake and fillings."
+        },
+        {
+            "question": "What dietary restrictions can you accommodate?",
+            "answer": "We accommodate halal requests on all orders. We can accommodate vegan/dairy-free requests on certain orders. We cannot accommodate nut allergies, gluten sensitivity, or kosher-certified requirements."
+        }
+    ]
+}

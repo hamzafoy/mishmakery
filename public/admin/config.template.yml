@@ -40,6 +40,21 @@ collections:
                 field:
                   { label: "Term", name: "term", widget: "text" }
 
+  - name: "faq"
+    label: "FAQ"
+    files:
+      - file: "public/content/faq.json"
+        label: "FAQ"
+        name: "faq"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
   - name: "bakery_menu"
     label: "Bakery Menu"
     files:
